@@ -67,7 +67,8 @@ MatrixXd Tools::CalculateJacobian(const VectorXd& x_state) {
 	float denom = px*px+py*py;
 	//cout << "denom: " << denom << endl;
 	//check division by zero
-	if(fabs(denom) < 0.00001){
+	if (px == 0 && py == 0) {
+	//if(fabs(denom) < 0.00001){
 		// if condition is true then print the following
 		cout << "Error: division by 0!" << endl;
 	}else {
